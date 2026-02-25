@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lightweight Highlighter</title>
+  <link rel="stylesheet" href="./highlighter.css" />
+</head>
+<body>
+  <button onclick="document.body.classList.toggle('theme-dark')">Toggle theme</button>
+
+  <h3>JavaScript</h3>
+  <pre data-line-numbers data-copy><code class="language-javascript">const greet = (name) => {
+  console.log(`Hello, ${name}`);
+};</code></pre>
+
+  <h3>JSON</h3>
+  <pre data-line-numbers data-copy><code class="language-json">{
+  "name": "highlighter",
+  "version": 1,
+  "enabled": true,
+  "items": [1, 2, 3]
+}</code></pre>
+
+  <h3>Python</h3>
+  <pre data-line-numbers data-copy><code class="language-python">def greet(name):
+    print(f"Hello, {name}")</code></pre>
+
+  <h3>C</h3>
+  <pre data-line-numbers data-copy><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(void) {
+  printf("Hello from C\n");
+  return 0;
+}</code></pre>
+
+  <h3>C++</h3>
+  <pre data-line-numbers data-copy><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  std::cout &lt;&lt; "Hello from C++\n";
+  return 0;
+}</code></pre>
+
+  <h3>C++ alias class (language-c++)</h3>
+  <pre data-line-numbers data-copy><code class="language-c++">#include &lt;vector&gt;
+
+int main() {
+  std::vector&lt;int&gt; v{1, 2, 3};
+  return (int)v.size();
+}</code></pre>
+
+  <h3>Bash</h3>
+  <pre data-line-numbers data-copy><code class="language-bash">#!/usr/bin/env bash
+name="world"
+if [ -n "$name" ]; then
+  echo "Hello, $name"
+fi</code></pre>
+
+  <h3>CSS</h3>
+  <pre data-line-numbers data-copy><code class="language-css">:root {
+  --brand: #4f46e5;
+}
+.button {
+  color: white;
+  background: var(--brand);
+  padding: 8px 12px;
+}</code></pre>
+
+  <h3>HTML</h3>
+  <pre data-line-numbers data-copy><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1 class="title"&gt;Hello&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <h3>x86/x64 Assembly</h3>
+  <pre data-line-numbers data-copy><code class="language-x86asm">section .text
+global _start
+
+_start:
+  mov rax, 60
+  xor rdi, rdi
+  syscall</code></pre>
+
+  <h3>ARM Assembly</h3>
+  <pre data-line-numbers data-copy><code class="language-armasm">.text
+.global _start
+
+_start:
+  mov r0, #0
+  mov r7, #1
+  svc #0</code></pre>
+
+  <script src="./highlighter.js"></script>
+  <script>
+    // Optional global defaults:
+    // SimpleHighlighter.configure({ lineNumbers: true, copyButton: true });
+
+    // Optional: add a new language (only grammar config needed)
+    // SimpleHighlighter.registerLanguage("ini", {
+    //   tokens: [
+    //     { type: "comment", pattern: /[;#][^\n]*/ },
+    //     { type: "keyword", pattern: /\[[^\]\n]+\]/ },
+    //     { type: "function", pattern: /^[A-Za-z0-9_.-]+(?=\s*=)/m },
+    //     { type: "operator", pattern: /=/ },
+    //     { type: "string", pattern: /"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/ },
+    //     { type: "number", pattern: /\b\d+(?:\.\d+)?\b/ },
+    //     { type: "punctuation", pattern: /[[\]]/ },
+    //   ],
+    // });
+  </script>
+</body>
+</html>

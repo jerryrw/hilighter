@@ -1,0 +1,108 @@
+:root {
+  --hl-bg: #f7f7fb;
+  --hl-fg: #1f2937;
+  --hl-border: #d1d5db;
+  --hl-gutter-bg: #eef2f7;
+  --hl-gutter-fg: #6b7280;
+
+  --tok-keyword: #8b5cf6;
+  --tok-string: #059669;
+  --tok-comment: #6b7280;
+  --tok-number: #0ea5e9;
+  --tok-function: #d97706;
+  --tok-operator: #ef4444;
+  --tok-punctuation: #64748b;
+}
+
+body.theme-dark {
+  --hl-bg: #0f172a;
+  --hl-fg: #e5e7eb;
+  --hl-border: #334155;
+  --hl-gutter-bg: #111827;
+  --hl-gutter-fg: #94a3b8;
+
+  --tok-keyword: #a78bfa;
+  --tok-string: #34d399;
+  --tok-comment: #94a3b8;
+  --tok-number: #38bdf8;
+  --tok-function: #fbbf24;
+  --tok-operator: #f87171;
+  --tok-punctuation: #cbd5e1;
+}
+
+pre {
+  margin: 1rem 0;
+  padding: 0;
+  background: var(--hl-bg);
+  color: var(--hl-fg);
+  border: 1px solid var(--hl-border);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.hl-container {
+  position: relative;
+}
+
+.hl-container.has-lines {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.hl-container.has-lines pre {
+  margin: 0;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hl-line-numbers {
+  white-space: pre;
+  user-select: none;
+  text-align: right;
+  padding: 1rem 0.6rem;
+  margin: 0;
+  color: var(--hl-gutter-fg);
+  background: var(--hl-gutter-bg);
+  border: 1px solid var(--hl-border);
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  line-height: 1.5;
+}
+
+.hl-copy-btn {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 3;
+  border: 1px solid var(--hl-border);
+  background: color-mix(in srgb, var(--hl-bg) 85%, #ffffff 15%);
+  color: var(--hl-fg);
+  border-radius: 6px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.hl-copy-btn:hover {
+  filter: brightness(1.05);
+}
+
+.token.keyword { color: var(--tok-keyword); font-weight: 600; }
+.token.string { color: var(--tok-string); }
+.token.comment { color: var(--tok-comment); font-style: italic; }
+.token.number { color: var(--tok-number); }
+.token.function { color: var(--tok-function); }
+.token.operator { color: var(--tok-operator); }
+.token.punctuation { color: var(--tok-punctuation); }
